@@ -54,13 +54,10 @@ window.onload = () => {
             let b = Math.floor(Math.random() *256 );
 
             let randomColor = `rgb(${r}, ${g}, ${b})`;
-            // console.log( randomColor );
-            
-            // while( colorsArr.length  randomColor.length ) {
 
-                if(!colorsArr.includes( randomColor ) && colorsArr.length != randomColor.length ) {
+                if(!colorsArr.includes( randomColor ) && paragraphs.length != randomColor.length ) {
                     colorsArr.push( randomColor );
-                    console.log(colorsArr);
+                    console.log( colorsArr );
 
                 } else {
                     randomiseColor();
@@ -69,11 +66,14 @@ window.onload = () => {
 
                 if( colorsArr.length === paragraphs.length ) {
                     
-                    for( let i = 0; i <= paragraphs.length; i++ ) {
-                        paragraphs[ i ].style.color = colorsArr[ i + 1];
+                    for( let i = 0; i < paragraphs.length; i++ ) {
+                        
+                        if(paragraphs[ i ].classList.length === 0 ) {
+                            paragraphs[ i ].style.color = colorsArr[ i ];
+                        } 
                     };
                 };
-            // }
+          
         };
     };
 
